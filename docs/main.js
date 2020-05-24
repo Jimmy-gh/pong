@@ -252,10 +252,10 @@
 
 })();
 
-var board = new Board(1000,450);//No está visible fuera de la función
+var board = new Board(750,337);//No está visible fuera de la función
 var ball = new Ball(350,50,10,board);
-var bar= new Bar(10,20,40,100,board);
-var bar2= new Bar(950,100,40,100,board);
+var bar= new Bar(10,20,20,80,board);
+var bar2= new Bar(720,100,20,80,board);
 var canvas=document.getElementById('canvas');
 var boardView= new BoardView(canvas,board);
 
