@@ -14,6 +14,7 @@ table{
 body{
     background-color: rgb(171, 130, 238);
     width: 120%;
+    -webkit-user-select: none;
 }
 .w,.up{
     font-weight: inherit;
