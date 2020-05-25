@@ -108,13 +108,31 @@
         this.y_máximo=this.board.height-this.salto;
         this.board.bars.push(this);
         this.kind="rectangle";
+        this.presionada=false;
     }
     self.Bar.prototype= {
-        up: function () {
-            if(this.y>this.y_minimo)this.y -= this.salto;
-            
+
+        upLargo: function () {
+            while(this.presionada){setTimeout(() => console.log("entre"),1000);
+                if(this.y>this.y_minimo)this.y -= this.salto;            }
         },
+        up: function () {
+            this.presionada=true;  
+            
+            //this.upLargo();
+            if(this.y>this.y_minimo)this.y -= this.salto;
+
+        },
+        soltarClick: function(){
+            this.presionada=false;
+        },
+        downLargo: function(){
+            while(this.presionada)
+                if(this.y<this.y_máximo)this.y += this.salto;            
+        },    
         down: function(){
+           // this.presionada=true;
+            //downLargo();
             if(this.y<this.y_máximo)this.y += this.salto;
         },    
         toString: function(){
@@ -252,10 +270,10 @@
 
 })();
 
-var board = new Board(1000,450);//No está visible fuera de la función
+var board = new Board(750,337);//No está visible fuera de la función
 var ball = new Ball(350,50,10,board);
-var bar= new Bar(10,20,40,100,board);
-var bar2= new Bar(950,100,40,100,board);
+var bar= new Bar(10,20,20,80,board);
+var bar2= new Bar(720,100,20,80,board);
 var canvas=document.getElementById('canvas');
 var boardView= new BoardView(canvas,board);
 
