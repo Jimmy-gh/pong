@@ -253,7 +253,7 @@
 var board = new Board(700,340);//No está visible fuera de la función
 var ball = new Ball(350,50,10,board);
 var bar= new Bar(10,20,20,80,board);
-var bar2= new Bar(770,100,20,80,board);
+var bar2= new Bar(670,100,20,80,board);
 var canvas=document.getElementById('canvas');
 var boardView= new BoardView(canvas,board);
 
