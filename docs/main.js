@@ -1,4 +1,4 @@
-    self.Board = function(width,height){ //self es igual a windows.
+    (self.Board = function(width,height){ //self es igual a windows.
         this.width= width;
         this.height=height;
         this.playing=false;
@@ -6,8 +6,7 @@
         this.score2=0;
         this.game_over=false;
         this.bars = [];
-        this.ball= null;
-    }
+        this.ball= null;    
 
     self.Board.prototype = {
         get elements(){
