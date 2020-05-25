@@ -10,6 +10,7 @@ table{
     text-align: center;
     font-size: 100%;
     background-color:rgba(218, 193, 111, 0.712);
+    -webkit-user-select: none;    
 }
 body{
     background-color: rgb(171, 130, 238);
