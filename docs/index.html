@@ -12,9 +12,9 @@
     <h2>
 		<table cellspacing="0" border="1">
 			<tr align="center">
-				<td><button  class="w" onmouseup="bar.soltarClick()" onmousedown="bar.up()" id="P1">0</button></td>
+				<td><button  class="w"  onclick="bar.up()" id="P1">0</button></td>
 				<td  class="vel" id="vel" style="background-color:yellow" onclick="boardView.pausa()">-Iniciar Juego -<br>[P]= Play</td>
-				<td> <button class="up" onmouseup="bar2.soltarClick()" onmousedown="bar2.up()" id="P2">0</button></td>
+				<td> <button class="up"  onclick="bar2.up()" id="P2">0</button></td>
 			</tr>
 		</table>       
     </h2>
@@ -25,9 +25,9 @@
     <h2>
 		<table cellspacing="0" border="1">
 			<tr align="center">
-				<td><button class="s" id="s" onmouseup="bar.soltarClick()"onmousedown="bar.down()">[W] <br>[S]</button></td>
+				<td><button class="s" id="s" onclick="bar.down()">[W] <br>[S]</button></td>
 				<td class="vel" id="saque" onmousedown="ball.sacar()">Sacar <br> -Click Aquí- </td>
-				<td><button class="down" onmouseup="bar2.soltarClick()" onmousedown="bar2.down()" id="P2">[Up]<br>[Down]</button></td>
+				<td><button class="down"  onclick="bar2.down()" id="P2">[Up]<br>[Down]</button></td>
 			</tr>
 		</table>       
     </h2>

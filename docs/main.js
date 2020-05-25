@@ -24,12 +24,12 @@
 
 (function(){
     self.Ball=function(x,y,radius,board){
-        this.x=x;
-        this.y=y;
+        this.x=x-radius;
+        this.y=y-radius;
         this.radius=radius;
         this.salto_x=3;
         this.salto_y=1;
-        this.velocidad_maxima=30;
+        this.velocidad_maxima=25;
         this.board=board;
         this.bounce_angle=0;
         this.max_bounce_angle= Math.PI /12;
@@ -59,10 +59,10 @@
             }
         },
         get width(){
-            return this.radius;
+            return 2*this.radius;
         },
         get height(){
-            return this.radius;            
+            return 2*this.radius;            
         },
         detener:function(){
             this.detenida=true;
@@ -101,36 +101,18 @@
         this.board=board;
         this.width=width;
         this.height=height;
-        this.salto = this.board.ball.radius;
+        this.salto = 4*this.board.ball.radius;
         this.y_minimo=-(this.height-this.salto);
         this.y_máximo=this.board.height-this.salto;
         this.board.bars.push(this);
         this.kind="rectangle";
-        this.presionada=false;
     }
     self.Bar.prototype= {
 
-        upLargo: function () {
-            while(this.presionada){setTimeout(() => console.log("entre"),1000);
-                if(this.y>this.y_minimo)this.y -= this.salto;            }
-        },
         up: function () {
-            this.presionada=true;  
-            
-            //this.upLargo();
             if(this.y>this.y_minimo)this.y -= this.salto;
-
         },
-        soltarClick: function(){
-            this.presionada=false;
-        },
-        downLargo: function(){
-            while(this.presionada)
-                if(this.y<this.y_máximo)this.y += this.salto;            
-        },    
         down: function(){
-           // this.presionada=true;
-            //downLargo();
             if(this.y<this.y_máximo)this.y += this.salto;
         },    
         toString: function(){
@@ -268,10 +250,10 @@
 
 })();
 
-var board = new Board(750,337);//No está visible fuera de la función
+var board = new Board(1000,340);//No está visible fuera de la función
 var ball = new Ball(350,50,10,board);
 var bar= new Bar(10,20,20,80,board);
-var bar2= new Bar(720,100,20,80,board);
+var bar2= new Bar(950,100,20,80,board);
 var canvas=document.getElementById('canvas');
 var boardView= new BoardView(canvas,board);
 
