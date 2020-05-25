@@ -17,17 +17,14 @@ body{
 }
 .w,.up{
     font-weight: inherit;
-    -webkit-user-select: none;
-    user-select: none;
+    
     font-size: 100%;
     height: 60px;
     width: 100%;
     background: crimson;
 }
 .down,.s{
-    font-weight: inherit;
-    -webkit-user-select:none;
-    user-select: nonet;
+    font-weight: inherit;    
     width: 100%;
     font-size: 100%;    
     background:lightseagreen;
