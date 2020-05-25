@@ -1,5 +1,5 @@
 canvas{
-    width: 100%;
+
     
     border: solid;
     background:rgba(47, 197, 33, 0.849); ;
@@ -9,13 +9,13 @@ table{
     width: 100px;
     height: 50px;
     text-align: center;
-    font-size: 100%;
+ 
     background-color:rgba(218, 193, 111, 0.720);
     -webkit-user-select: none;    
 }
 body{
     background-color: rgb(171, 130, 238);
-    width: 100%;
+
 }
 .w,.up{
     font-weight: inherit;
