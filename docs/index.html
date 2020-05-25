@@ -4,48 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ping Pong</title>
-    <style>
-        canvas{
-			width: 60%;
-			
-            border: solid;
-			background:rgba(47, 197, 33, 0.849); ;
-        }
-		table{
-			color: rgb(65, 1, 1);
-			width: 60%;
-			text-align: center;
-			font-size: 50%;
-			background-color:rgba(218, 193, 111, 0.712);
-		}
-		body,.vel{
-			background-color: rgb(171, 130, 238);
-		}
-		.w,.s{
-			font-weight: inherit;
-			
-			
-			background: crimson;
-		}
-		.up,.down{
-			font-weight: inherit;
-			
-			background:lightseagreen;
-		}	
-		.vel{
-			width: 60%;
-		}
-     </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
 <div class="row text-right">
     <h2>
-		<table cellspacing="8" border="1">
+		<table cellspacing="0" border="1">
 			<tr align="center">
-				<td><button  class="w" ondblclick="bar.up()" onclick="bar.up()" id="P1">0</button></td>
+				<td><button  class="w" onmouseup="bar.soltarClick()" onmousedown="bar.up()" id="P1">0</button></td>
 				<td  class="vel" id="vel" style="background-color:yellow" onclick="boardView.pausa()">-Iniciar Juego -<br>[P]= Play</td>
-				<td> <button class="up" ondblclick="bar2.up()" onclick="bar2.up()" id="P2">0</button></td>
+				<td> <button class="up" onmouseup="bar2.soltarClick()" onmousedown="bar2.up()" id="P2">0</button></td>
 			</tr>
 		</table>       
     </h2>
@@ -54,11 +23,11 @@
 <script src="main.js"></script>
 <div class="row text-right">
     <h2>
-		<table cellspacing="10" border="1">
+		<table cellspacing="0" border="1">
 			<tr align="center">
-				<td><button class="s" id="s" ondblclick="bar.down()"onclick="bar.down()">[W] <br>[S]</button></td>
+				<td><button class="s" id="s" onmouseup="bar.soltarClick()"onmousedown="bar.down()">[W] <br>[S]</button></td>
 				<td class="vel" id="saque" onmousedown="ball.sacar()">Sacar <br> -Click Aquí- </td>
-				<td><button class="down" ondblclick="bar2.down()" onclick="bar2.down()" id="P2">[Up]<br>[Down]</button></td>
+				<td><button class="down" onmouseup="bar2.soltarClick()" onmousedown="bar2.down()" id="P2">[Up]<br>[Down]</button></td>
 			</tr>
 		</table>       
     </h2>

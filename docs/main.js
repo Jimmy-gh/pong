@@ -108,13 +108,31 @@
         this.y_máximo=this.board.height-this.salto;
         this.board.bars.push(this);
         this.kind="rectangle";
+        this.presionada=false;
     }
     self.Bar.prototype= {
-        up: function () {
-            if(this.y>this.y_minimo)this.y -= this.salto;
-            
+
+        upLargo: function () {
+            while(this.presionada){setTimeout(() => console.log("entre"),1000);
+                if(this.y>this.y_minimo)this.y -= this.salto;            }
         },
+        up: function () {
+            this.presionada=true;  
+            
+            //this.upLargo();
+            if(this.y>this.y_minimo)this.y -= this.salto;
+
+        },
+        soltarClick: function(){
+            this.presionada=false;
+        },
+        downLargo: function(){
+            while(this.presionada)
+                if(this.y<this.y_máximo)this.y += this.salto;            
+        },    
         down: function(){
+           // this.presionada=true;
+            //downLargo();
             if(this.y<this.y_máximo)this.y += this.salto;
         },    
         toString: function(){
